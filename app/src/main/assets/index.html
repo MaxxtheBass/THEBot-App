@@ -372,7 +372,24 @@ const TREE={
     ]),
     N("Pickpocket und Überfall","Riskant, gegen andere",[
       C("-pickpocket @person","Bargeld klauen, max. 5 %, 50/50, alle 22 Min."),
-      C("-überfall","Laden ausrauben mit 3–5 Leuten (start / join / go)"),
+      N("Überfall","Mit 3–5 Leuten einen Laden ausrauben: Rollen, Risiko, Stufen",[
+        C("-überfall","Hilfe zum Überfall"),
+        C("-überfall start sicher","Lobby öffnen im Modus sicher: 60 % Beute, halbe Strafe, mehr Zeit"),
+        C("-überfall start normal","Lobby öffnen im Modus normal"),
+        C("-überfall start riskant","Lobby öffnen im Modus riskant: 180 % Beute, 1,5-fache Strafe, weniger Zeit"),
+        C("-überfall join","Der Lobby beitreten"),
+        C("-überfall rolle <name>","Rolle wählen: hacker, techniker, schmiere, fahrer oder muskel"),
+        C("-überfall modus <name>","Risiko-Modus ändern (nur der Starter): sicher, normal, riskant"),
+        C("-überfall go","Überfall starten (nur der Starter, 3–5 Leute)"),
+        C("-überfall leave","Aus der Lobby aussteigen"),
+        C("-überfall cancel","Lobby abbrechen (nur der Starter)"),
+        C("-überfall status","Stand der Lobby oder des laufenden Überfalls"),
+        C("-überfall rollen","Alle Rollen und was sie können"),
+        C("-überfall modi","Die drei Risiko-Modi im Vergleich"),
+        C("-überfall läden","Alle Läden mit Beute und Stufen"),
+        C("-überfall stats","Deine Überfall-Statistik"),
+        C("-überfall top","Die besten Räuber"),
+      ]),
     ]),
   ]),
   N("Bank","Geld sparen",[
@@ -517,7 +534,7 @@ const tiere=N("Haustiere","17 Tiere zum Sammeln und Gassi gehen",[
   Object.assign(TREE,neu);
 })();
 const BUILD=/*BUILD*/0/*END*/;
-const CODE=/*CODE*/[{"name":"bot.js","label":"Bot-Kern","zeilen":2810},{"name":"games.js","label":"Spiele","zeilen":2573},{"name":"index.html","label":"App-Oberfläche","zeilen":814},{"name":"extras.js","label":"Statistik, Schicksal, Versicherung","zeilen":524},{"name":"autos.js","label":"Autos und Sprit","zeilen":329},{"name":"ki/index.js","label":"Kim (KI)","zeilen":279},{"name":"sync.js","label":"Datenabgleich","zeilen":192},{"name":"MainActivity.java","label":"Android-App","zeilen":51}]/*END*/;
+const CODE=/*CODE*/[{"name":"bot.js","label":"Bot-Kern","zeilen":2810},{"name":"games.js","label":"Spiele","zeilen":2691},{"name":"index.html","label":"App-Oberfläche","zeilen":831},{"name":"extras.js","label":"Statistik, Schicksal, Versicherung","zeilen":524},{"name":"autos.js","label":"Autos und Sprit","zeilen":329},{"name":"ki/index.js","label":"Kim (KI)","zeilen":279},{"name":"sync.js","label":"Datenabgleich","zeilen":192},{"name":"MainActivity.java","label":"Android-App","zeilen":51}]/*END*/;
 const KONTAKT={name:"Max Wallner (❖Ƭʜᴇm̶̬̭͈̩͖̿̾̏̍͘͝à̸͇̈́͛̚x)",tel:"+49 1575 3655613",mail:"wallnermax6@gmail.com"};
 const out=document.getElementById("out"), q=document.getElementById("q"), toast=document.getElementById("toast"), chips=document.getElementById("chips");
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
