@@ -1,0 +1,24 @@
+plugins { id "com.android.application" }
+android {
+    namespace "de.thebot.befehle"
+    compileSdk 34
+    defaultConfig {
+        applicationId "de.thebot.befehle"
+        minSdk 24
+        targetSdk 34
+        versionCode Integer.parseInt((project.findProperty("vCode") ?: "1").toString())
+        versionName "1.0"
+    }
+    signingConfigs {
+        thebot {
+            storeFile file("thebot.keystore")
+            storePassword System.getenv("KS_PASS") ?: "thebot2026"
+            keyAlias "thebot"
+            keyPassword System.getenv("KS_PASS") ?: "thebot2026"
+        }
+    }
+    buildTypes {
+        debug { signingConfig signingConfigs.thebot }
+        release { minifyEnabled false }
+    }
+}
