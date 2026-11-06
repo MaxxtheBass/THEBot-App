@@ -66,7 +66,7 @@ public class MainActivity extends Activity {
         runOnUiThread(new Runnable() { public void run() { web.evaluateJavascript(code, null); } });
     }
 
-    // Lädt die neue APK selbst herunter und übergibt sie dem System-Installer (Bestätigung bleibt Pflicht).
+    // Lädt die neue APK selbst herunter und übergibt sie dem System-Installer. Ab Android 12 geht das ohne Nachfrage, wenn die App den Vorgänger selbst installiert hat.
     private void ladeUndInstalliere(String adresse) {
         try {
             HttpURLConnection c = (HttpURLConnection) new URL(adresse).openConnection();
@@ -77,6 +77,8 @@ public class MainActivity extends Activity {
             long gesamt = c.getContentLengthLong();
             PackageInstaller pi = getPackageManager().getPackageInstaller();
             PackageInstaller.SessionParams sp = new PackageInstaller.SessionParams(PackageInstaller.SessionParams.MODE_FULL_INSTALL);
+            // Ab Android 12: Update ohne Nachfrage, wenn das System es erlaubt (sonst kommt die normale Bestätigung)
+            if (Build.VERSION.SDK_INT >= 31) sp.setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED);
             int id = pi.createSession(sp);
             PackageInstaller.Session se = pi.openSession(id);
             try {
