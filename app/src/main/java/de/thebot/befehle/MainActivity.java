@@ -48,9 +48,15 @@ public class MainActivity extends Activity {
                 ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 cm.setPrimaryClip(ClipData.newPlainText("Befehl", text));
             }
+            // Normaler Weg: laden und das System fragt nach der Installation
             @JavascriptInterface
             public void install(final String url) {
-                new Thread(new Runnable() { public void run() { ladeUndInstalliere(url); } }).start();
+                new Thread(new Runnable() { public void run() { ladeUndInstalliere(url, false); } }).start();
+            }
+            // Automatisch: wenn Android es erlaubt, ohne Nachfrage (sonst fragt es normal)
+            @JavascriptInterface
+            public void installAuto(final String url) {
+                new Thread(new Runnable() { public void run() { ladeUndInstalliere(url, true); } }).start();
             }
         }, "Android");
         IntentFilter f = new IntentFilter(AKTION);
@@ -67,7 +73,7 @@ public class MainActivity extends Activity {
     }
 
     // Lädt die neue APK selbst herunter und übergibt sie dem System-Installer. Ab Android 12 geht das ohne Nachfrage, wenn die App den Vorgänger selbst installiert hat.
-    private void ladeUndInstalliere(String adresse) {
+    private void ladeUndInstalliere(String adresse, boolean leise) {
         try {
             HttpURLConnection c = (HttpURLConnection) new URL(adresse).openConnection();
             c.setConnectTimeout(15000);
@@ -78,7 +84,7 @@ public class MainActivity extends Activity {
             PackageInstaller pi = getPackageManager().getPackageInstaller();
             PackageInstaller.SessionParams sp = new PackageInstaller.SessionParams(PackageInstaller.SessionParams.MODE_FULL_INSTALL);
             // Ab Android 12: Update ohne Nachfrage, wenn das System es erlaubt (sonst kommt die normale Bestätigung)
-            if (Build.VERSION.SDK_INT >= 31) sp.setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED);
+            if (leise && Build.VERSION.SDK_INT >= 31) sp.setRequireUserAction(PackageInstaller.SessionParams.USER_ACTION_NOT_REQUIRED);
             int id = pi.createSession(sp);
             PackageInstaller.Session se = pi.openSession(id);
             try {
