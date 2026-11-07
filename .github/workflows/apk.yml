@@ -24,11 +24,11 @@ jobs:
         run: sed -i -E "s#/\*BUILD\*/[0-9]+/\*END\*/#/*BUILD*/${{ github.run_number }}/*END*/#" app/src/main/assets/index.html
       - name: APK bauen
         env: { KS_PASS: "${{ secrets.KS_PASS }}" }
-        run: gradle --no-daemon -PvCode=${{ github.run_number }} assembleDebug
+        run: gradle --no-daemon -PvCode=${{ github.run_number }} assembleRelease
       - name: Als Release veröffentlichen
         env: { GH_TOKEN: "${{ github.token }}" }
         run: |
-          cp app/build/outputs/apk/debug/app-debug.apk THE-Bot.apk
+          cp app/build/outputs/apk/release/app-release.apk THE-Bot.apk
           gh release create "b${{ github.run_number }}" "THE-Bot.apk#THE Bot.apk" --latest --title "THE Bot (APK), Build ${{ github.run_number }}" --notes "Zum Installieren auf Android herunterladen: THE Bot.apk"
           for t in $(gh release list --json tagName -q '.[].tagName'); do
             [ "$t" = "b${{ github.run_number }}" ] || gh release delete "$t" --yes --cleanup-tag

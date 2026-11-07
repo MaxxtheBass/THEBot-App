@@ -17,8 +17,9 @@ android {
             keyPassword System.getenv("KS_PASS") ?: "thebot2026"
         }
     }
+    lint { checkReleaseBuilds false }
     buildTypes {
         debug { signingConfig signingConfigs.thebot }
-        release { minifyEnabled false }
+        release { signingConfig signingConfigs.thebot; minifyEnabled false; debuggable false }
     }
 }
