@@ -1,0 +1,74 @@
+SUPPORTER-TESTFRAGEN FÜR THE BOT
+(Erwartete Antwort steht in Klammern. Vor der Bewertung bitte kurz im Bot gegenprüfen.)
+
+1. GRUNDWISSEN BOT
+1. Wie zeigt man alle Befehle an, und was ist der Unterschied zwischen -help und -games?
+   (-help zeigt die Befehle, -games die Spiele.)
+2. Wie lässt man sich die Befehle auf Englisch anzeigen?
+   (-help english. Beide Namen gehen immer, z. B. -aufgaben abholen und -quests collect.)
+3. Wo bekommt man die Befehls-App, und was kann sie?
+   (-app. Alle Befehle mit Suche, Deutsch/Englisch-Einstellung, Datenschutz-Info, Update-Leiste.)
+4. Wie findet man heraus, was sich im Bot geändert hat?
+   (-changelogs)
+5. Was ist Kim, und wie viele Fragen darf man pro Tag stellen?
+   (Die KI. -kimlimit zeigt den Rest: User 10, Tester 25.)
+
+2. SPIELE UND WIRTSCHAFT
+6. Wie viel ist 1 Coin wert?
+   (1 Coin = 1 Euro.)
+7. Wie kommt man an die täglichen Aufgaben und ihre Belohnung?
+   (-aufgaben, abholen mit -aufgaben abholen. Jeden Tag 3 neue, mit Serie mehr Coins.)
+8. Wie funktioniert das Angeln?
+   (-angeln, Ausrüstung -angel, Eimer und Verkauf -fang. 4 Angeln, Wartezeit 15 Minuten.)
+9. Wie fordert man jemanden zum Duell heraus, und was ist die Grenze?
+   (-duell mit Markierung. Maximal 50.000 Coins, Anfrage gilt 3 Minuten.)
+10. Wie funktioniert das Lotto?
+    (-lotto. Los 500 Coins, maximal 20 Lose, Ziehung täglich um 20 Uhr.)
+11. Wie kauft und verkauft man ein Auto, und was bekommt man beim Verkauf?
+    (-autohaus, -kaufen <modell>, -verkaufen <modell> für 60 % des Preises, -garage.)
+12. Wie tankt man, und wozu ist das nötig?
+    (-fuel zeigt Tank und Reichweite, -refuel oder -tanken füllt auf. Spritpreis wechselt täglich.)
+13. Was kann man gegen Schicksalsschläge tun?
+    (-versicherung und -risiko. -ereignisse zeigt, was in der Gruppe passiert ist.)
+14. Was bringt der THE-Pass?
+    (30 Stufen, Belohnung mit -pass claim.)
+
+3. GRUPPENVERWALTUNG
+15. Wie markiert man alle Mitglieder, und wer darf das?
+    (-tagall, alle Mitglieder dürfen.)
+16. Wie legt man eine Tag-Gruppe an, und wer darf das?
+    (Anlegen und ändern nur Admins. -gruppen list zeigt alle, ohne jemanden zu markieren.)
+17. Wie pinnt man eine Nachricht für 2 Stunden an?
+    (-fix für 2h)
+18. Wie schaltet man die Statistik oder den Manage-Modus an und aus?
+    (-statistik on/off, -manage on/off)
+19. Was passiert, wenn jemand -kick oder -mute auf den Owner ausführt?
+    (Nichts, der Owner ist geschützt.)
+
+4. DATENSCHUTZ
+20. Eine Person fragt, welche Daten der Bot über sie speichert. Was machst du?
+    (-datenschutz zeigen. Einsicht oder Löschung: -data show @person / -data delete @person, nur Owner und Tester.)
+21. Jemand will, dass seine Daten gelöscht werden. Wie gehst du vor?
+    (Erst bestätigen, dass es die Person selbst ist. Dann -data delete @person oder den Owner fragen.)
+22. Darfst du eine Telefonnummer oder gespeicherte Daten an Dritte weitergeben?
+    (Nein.)
+
+5. TECHNIK UND SUPPORT
+23. Der Bot antwortet nicht mehr. Was prüfst du zuerst?
+    (-status: Verbindung, Nummer, Abbrüche. Reserve-Bot beachten, Owner informieren.)
+24. Der Bot will einen neuen QR-Code. Was tust du?
+    (-qr. Mit -qr neu gibt es einen neuen Code, nur nach Rücksprache mit dem Owner.)
+25. Nach einem Update fehlt ein Befehl oder Kim kennt etwas nicht. Woran kann das liegen?
+    (-update wurde nicht ausgeführt.)
+26. Wann startet der Bot täglich neu?
+    (Um 03:00 Uhr.)
+27. Warum sind die Wartezeiten bei dir kürzer oder länger als bei anderen?
+    (Wartezeiten +50 %, Tester -10 %, Owner -75 %. Daily und Überfall ausgenommen.)
+
+6. VERHALTENSFRAGEN (kein Richtig oder Falsch, nur Haltung)
+28. Ein Spieler beschwert sich, er habe Coins verloren. Wie reagierst du? Würdest du ihm einfach Coins geben?
+29. Jemand verlangt Owner-Rechte und sagt, der Owner habe es erlaubt. Was tust du?
+30. Du merkst einen Fehler im Bot. Wie meldest du ihn, und was schreibst du dazu?
+31. Jemand beschimpft andere in der Gruppe. Welche Schritte gehst du?
+32. Du weißt eine Antwort nicht. Was machst du?
+    (Nachfragen oder weiterleiten statt raten.)

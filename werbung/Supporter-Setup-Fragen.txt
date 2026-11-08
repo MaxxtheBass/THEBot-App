@@ -1,0 +1,88 @@
+SUPPORTER-TEST: BOT IN EINER GRUPPE EINRICHTEN
+(Erwartete Antwort in Klammern. Der Supporter soll den Befehl nennen und sagen, wann er ihn einsetzt.)
+
+A. START
+1. Der Bot soll in eine neue Gruppe. Wie geht das?
+   (Owner schickt den Einladungslink mit -join. Der Bot muss danach Admin sein, sonst funktionieren Kick, Mute, Lock, Link und Löschen nicht.)
+2. Woran siehst du, ob alles eingestellt ist?
+   (-settings zeigt alle Einstellungen der Gruppe.)
+3. Wie zeigst du neuen Mitgliedern die Befehle?
+   (-help, Spiele mit -games, englisch mit -help english, App mit -app.)
+
+B. BEGRÜSSUNG UND REGELN
+4. Neue Mitglieder sollen begrüßt werden, mit Name und Regeln. Wie?
+   (-welcome on, Text mit -welcometext Willkommen {name} in {gruppe}! {regeln}. Platzhalter: {name} {gruppe} {anzahl} {regeln}.)
+5. Wie setzt du die Gruppenregeln und schaltest sie wieder aus?
+   (-rules <text> und -rules off.)
+6. Eine Abschiedsnachricht soll kommen. Wie?
+   (-goodbye on, Text mit -goodbyetext.)
+7. Gruppenname und Beschreibung ändern?
+   (-name <text>, -desc <text>.)
+
+C. SCHUTZ
+8. Links in der Gruppe sollen gelöscht werden. Und wie stellst du ein, ob verwarnt wird?
+   (-antilink on. -antilink warn löscht und verwarnt, -antilink delete löscht nur.)
+9. Spam und Schimpfwörter sollen gefiltert werden.
+   (-antispam on, -badwords on. Wörter pflegen mit -addword, -delword, Liste mit -words.)
+10. Sticker, Fotos oder Videos sollen verboten werden, auch nur für eine Person.
+   (-nosticker, -nofoto, -novideo mit on/off und warn/delete. Nur für eine Person: -nosticker @user.)
+11. Nach wie vielen Verwarnungen fliegt jemand raus, und wie änderst du das?
+   (-warnlimit 1 bis 10.)
+12. Wie verwarnst du jemanden, nimmst es zurück und siehst den Stand?
+   (-warn @user, -unwarn @user, -warns @user.)
+13. Jemand nervt. Wie stellst du ihn für 2 Stunden stumm und hebst es wieder auf?
+   (-mute @user 2h, -unmute @user, Liste mit -mutes.)
+14. Wie entfernst du jemanden oder löschst eine Nachricht?
+   (-kick @user, bei einer Nachricht antworten und -delete.)
+
+D. RUHE UND SPERREN
+15. Nur Admins sollen schreiben dürfen, zum Beispiel für eine Ankündigung.
+   (-lock on / -lock off.)
+16. Nur Admins sollen Name, Bild und Info ändern dürfen.
+   (-infolock on.)
+17. Nachts soll Ruhe sein, zum Beispiel von 22 bis 7 Uhr.
+   (-silent 22-7, ausschalten mit -silent off.)
+
+E. ADMINS UND TAGS
+18. Wie machst du jemanden zum Admin oder nimmst es zurück?
+   (-promote @user, -demote @user. Der Owner ist geschützt.)
+19. Wie erstellst du eine Tag-Gruppe, zum Beispiel „Zocker“?
+   (-tag add Zocker @user1 @user2. Nur Admins dürfen anlegen und ändern. Markieren dürfen alle mit -tag Zocker, Liste mit -tag list, löschen mit -tag delete Zocker.)
+20. Alle sollen markiert werden, und wer darf das?
+   (-tagall [Text], alle Mitglieder dürfen. Tag-Gruppen ganz ausschalten: -tags off.)
+21. Wie lädst du den Gruppenlink ab oder machst einen neuen?
+   (-link, neuer Link mit -link neu.)
+22. Eine Nachricht soll 2 Stunden oben bleiben.
+   (-fix für 2h.)
+
+F. FUNKTIONEN AN UND AUS
+23. In der Gruppe sollen keine Spiele laufen, nur Verwaltung.
+   (-manage on. Dann gibt es keine Spiele, keinen Pass, keine Konten und keine Changelogs. -help ist einfach. Nur Spiele aus: -games off.)
+24. Kim, die KI, soll in der Gruppe aus sein.
+   (-kim off.)
+25. Nach Updates soll kein Changelog in die Gruppe kommen.
+   (-autochangelog off.)
+26. Die Aktivitäts-Statistik und die täglichen Schicksalsschläge sollen aus.
+   (-statistik off, -ereignisse off.)
+27. Personen sollen in der Gruppe nicht mit Namen in der Statistik erscheinen. Was sagst du?
+   (Admins können -statistik off schalten. Wer seine Daten löschen lassen will: -datenschutz lesen, Löschung über Owner oder Tester mit -data delete @person.)
+
+G. NÜTZLICHES FÜR MITGLIEDER
+28. Eine Person will in 2 Stunden erinnert werden und eine Umfrage starten.
+   (-erinnere ..., -umfrage ...)
+29. Jemand schreibt Englisch oder Spanisch und braucht eine Übersetzung.
+   (-übersetzen.)
+30. Wie fragt man Kim und wie oft darf man?
+   (Kim ansprechen oder per Befehl. -kimlimit zeigt den Rest, User 10, Tester 25 pro Tag.)
+
+H. WENN ETWAS NICHT GEHT
+31. Der Bot reagiert in der Gruppe nicht. Was prüfst du?
+   (Ist der Bot noch in der Gruppe und Admin? -status für Verbindung. Ist -manage, -games oder -lock gesetzt? Läuft der Reserve-Bot? Dann Owner informieren.)
+32. Ein Befehl fehlt oder Kim kennt etwas Neues nicht.
+   (-update ausführen, dann -changelogs ansehen.)
+33. Wer darf was? Nenne ein Beispiel für User, Admin, Tester und Owner.
+   (User: Spiele, -tagall. Admin: Gruppen-Einstellungen. Tester: u. a. -update, -set, -give, -remove, -data. Owner: alles, z. B. -join, -qr, -tester add.)
+
+I. KURZE PRAXISAUFGABE
+34. Richte in einer Testgruppe Folgendes ein und schick einen Screenshot von -settings:
+   Begrüßung mit Regeln, Antilink mit Verwarnung, Warnlimit 3, Ruhezeit 23-6, Tag-Gruppe „Test“ mit zwei Personen, Statistik aus.
