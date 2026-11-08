@@ -26,4 +26,8 @@ const neu = "/*CODE*/" + JSON.stringify(liste) + "/*END*/";
 if (!t.includes("/*CODE*/")) throw new Error("Marker fehlt");
 t = t.replace(/\/\*CODE\*\/[\s\S]*?\/\*END\*\//, () => neu);
 fs.writeFileSync(html, t);
+// Web-Version (fuer iPhone und Browser): immer dieselbe Datei wie in der Android-App
+const docs = path.join(__dirname, "..", "docs");
+fs.mkdirSync(docs, { recursive: true });
+fs.copyFileSync(html, path.join(docs, "index.html"));
 console.log(liste.map((x) => `${x.name}: ${x.zeilen}`).join("\n"), "\nSumme:", liste.reduce((s, x) => s + x.zeilen, 0));
