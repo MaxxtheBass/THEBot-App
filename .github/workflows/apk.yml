@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths-ignore: ["README.md"]
+    paths-ignore: ["README.md", "werbung/**"]
 permissions:
   contents: write
 jobs:
