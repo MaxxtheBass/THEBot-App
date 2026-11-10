@@ -1018,7 +1018,7 @@ chipsBauen(); zeigen();
 <script>
 /* App-Chat: Spiele-Befehle über eine kleine Firebase-Datenbank an den Bot (Zwischenlösung, vom Owner ein-/ausschaltbar). */
 (function(){
-  const CHAT_URL="";  // z. B. "https://mein-projekt-default-rtdb.europe-west1.firebasedatabase.app" (leer = Chat noch nicht eingerichtet)
+  const CHAT_URL="https://thebot-13611-default-rtdb.europe-west1.firebasedatabase.app";  // z. B. "https://mein-projekt-default-rtdb.europe-west1.firebasedatabase.app" (leer = Chat noch nicht eingerichtet)
   const $=id=>document.getElementById(id), K=$("chat"), liste=$("chList"), info=$("chInfo"), pairBox=$("chPair"), dot=$("chDot"), text=$("chText"), senden=$("chSend");
   let timer=null, gesehen=new Set(), zustand={an:null,hb:0,fehler:false,gekoppelt:false}, verlauf=[];
   const ls={g:k=>{try{return localStorage.getItem(k)}catch(e){return null}},s:(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}},d:k=>{try{localStorage.removeItem(k)}catch(e){}}};
